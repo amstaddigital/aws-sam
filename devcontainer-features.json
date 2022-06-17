@@ -14,7 +14,7 @@
 					"description": "Select or enter an AWS SAM CLI version. (Available versions here: https://github.com/aws/aws-sam-cli/releases)"
 				}
 			},
-			"buildArg": "_VSC_INSTALL_AWS_SAM_CLI",
+			"buildArg": "_VSC_INSTALL_AWS_SAM",
 			"include": [
 				"cpp",
 				"dotnet",
