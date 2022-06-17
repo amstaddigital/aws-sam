@@ -1,30 +1,48 @@
 {
     "features": [
         {
-            "id": "helloworld",
-            "name": "My First Feature",
-            "options": {
-                "greeting": {
-                    "type": "string",
-                    "proposals": [ "hey", "hello", "hi", "howdy" ],
-                    "default": "hey",
-                    "description": "Select a pre-made greeting, or enter your own"
-                }
-            },
-            "include": ["ubuntu"]
-        },
-        {
-            "id": "color",
-            "name": "A feature to remind you of your favorite color",
-            "options": {
-                "favorite": {
-                    "type": "string",
-                    "enum": [ "red", "gold", "green" ],
-                    "default": "red",
-                    "description": "Choose your favorite color."
-                }
-            },
-            "include": ["ubuntu"]
+            "id": "aws-sam",
+            "name": "AWS SAM CLI",
+			"documentationURL": "https://github.com/amstaddigital/aws-sam/blob/main/script-library/docs/awscli.md",
+			"options": {
+				"version": {
+					"type": "string",
+					"proposals": [
+						"latest"
+					],
+					"default": "latest",
+					"description": "Select or enter an AWS SAM CLI version. (Available versions here: https://github.com/aws/aws-sam-cli/releases)"
+				}
+			},
+			"buildArg": "_VSC_INSTALL_AWS_SAM_CLI",
+			"include": [
+				"cpp",
+				"dotnet",
+				"dotnet-fsharp",
+				"dotnet-mssql",
+				"kubernetes-helm",
+				"kubernetes-helm-minikube",
+				"docker-from-docker",
+				"docker-in-docker",
+				"powershell",
+				"java",
+				"go",
+				"php",
+				"ruby",
+				"rust",
+				"typescript-node",
+				"javascript-node",
+				"python-3",
+				"python-3-anaconda",
+				"python-3-miniconda",
+				"ubuntu",
+				"debian",
+				"javascript-node-mongo",
+				"javascript-node-postgres",
+				"php-mariadb",
+				"ruby-rails-postgres",
+				"python-3-postgres"
+			]
         }
     ]
 }
