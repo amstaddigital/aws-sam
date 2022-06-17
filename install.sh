@@ -6,8 +6,9 @@ set -e
 # The tooling will parse the devcontainer-features.json + user devcontainer, and write 
 # any build-time arguments into a feature-set scoped "devcontainer-features.env"
 # The author is free to source that file and use it however they would like.
+pwd
 set -a
-. ./devcontainer-features.env
+. /devcontainer-features.env
 set +a
 
 
@@ -17,7 +18,7 @@ if [ ! -z ${_VSC_INSTALL_AWS_SAM} ]; then
     # Build args are exposed to this entire feature set following the pattern:  _BUILD_ARG_<FEATURE ID>_<OPTION NAME>
     SAM_CLI_VERSION=${_BUILD_ARG_AWS_SAM_VERSION:-latest}
     
-    curl -L "https://github.com/aws/aws-sam-cli/releases/download/v$SAM_CLI_VERSION/aws-sam-cli-linux-x86_64.zip" -o "samcli.zip" && \
+    curl -fsSL "https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip" -o "samcli.zip" && \
     unzip samcli.zip -d sam-installation && ./sam-installation/install && \
     rm samcli.zip && rm -rf sam-installation && sam --version
 fi
