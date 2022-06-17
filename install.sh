@@ -8,7 +8,7 @@ set -e
 # The author is free to source that file and use it however they would like.
 pwd
 set -a
-. /devcontainer-features.env
+. /features-script.env
 set +a
 
 
